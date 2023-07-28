@@ -18,6 +18,13 @@ export const api = createApi({
                 method: "POST",
                 body: payload,
             })
+        }),
+        postAiAssist: build.mutation({
+            query: (payload) => ({
+                url: "openai/assist",
+                method: "POST",
+                body: payload,
+            })
         })
     })
 })
@@ -25,4 +32,5 @@ export const api = createApi({
 export const {
     usePostAiTextMutation,
     usePostAiCodeMutation,
+    usePostAiAssistMutation,
 } = api
